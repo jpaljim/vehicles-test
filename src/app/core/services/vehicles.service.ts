@@ -14,8 +14,8 @@ export class VehiclesService {
   };
   private http = inject(HttpClient);
 
-  getAllMakes(): Observable<Make> {
-    return this.http.get<Make>(`${VehiclesService.baseUrl}${VehiclesService.API.GET_ALL_MAKES}`);
+  getAllMakes(): Observable<Make[]> {
+    return this.http.get<Make[]>(`${VehiclesService.baseUrl}${VehiclesService.API.GET_ALL_MAKES}`);
   }
 
 }
