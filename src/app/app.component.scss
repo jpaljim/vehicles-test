@@ -1,0 +1,9 @@
+div {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100dvh;
+
+  main {
+    margin: 32px 15% 32px 15%;
+  }
+}
