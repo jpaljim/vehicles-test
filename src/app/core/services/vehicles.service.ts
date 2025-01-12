@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { Make } from '@models/make';
 import { Observable } from 'rxjs';
-import { Make } from '../models/make';
+import { Response } from '../models/response';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +15,8 @@ export class VehiclesService {
   };
   private http = inject(HttpClient);
 
-  getAllMakes(): Observable<Make[]> {
-    return this.http.get<Make[]>(`${VehiclesService.baseUrl}${VehiclesService.API.GET_ALL_MAKES}`);
+  getAllMakes(): Observable<Response<Make[]>> {
+    return this.http.get<Response<Make[]>>(`${VehiclesService.baseUrl}${VehiclesService.API.GET_ALL_MAKES}`);
   }
 
 }

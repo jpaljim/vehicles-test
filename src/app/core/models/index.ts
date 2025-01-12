@@ -1,2 +1,2 @@
 export * from './make';
-export * from './make-result';
+export * from './response';

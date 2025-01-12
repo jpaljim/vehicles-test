@@ -1,9 +1,4 @@
-import { MakeResult } from "./make-result";
-
 export interface Make {
-  Count: number;
-  Message: string;
-  SearchCriteria: null;
-  Results: MakeResult[];
+  Make_ID: number;
+  Make_Name: string;
 }
-
