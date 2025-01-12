@@ -1,6 +1,8 @@
+$header-height: 90px;
+
 div {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: $header-height calc(100% - $header-height - 32px);
   min-height: 100dvh;
 
   main {
