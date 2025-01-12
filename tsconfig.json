@@ -23,6 +23,7 @@
     "paths": {
       "@components/*": ["app/components/*"],
       "@models/*": ["app/core/models/*"],
+      "@pipes/*": ["app/shared/pipes/*"],
       "@services/*": ["app/core/services/*"],
       "@shared/components/*": ["app/shared/components/*"],
       "@stores/*": ["app/core/stores/*"],
