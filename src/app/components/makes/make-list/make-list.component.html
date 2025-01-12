@@ -1,1 +1,8 @@
-<p>make-list works!</p>
+<mat-selection-list class="list">
+  <cdk-virtual-scroll-viewport itemSize="48" class="list app-scroll">
+    <mat-list-item *cdkVirtualFor="let make of makes; let odd = odd;"
+      class="item" [class.item-alternate]="odd" (click)="click(make)">
+      {{ make.Make_Name }}
+    </mat-list-item>
+  </cdk-virtual-scroll-viewport>
+</mat-selection-list>

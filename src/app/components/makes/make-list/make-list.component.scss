@@ -1,0 +1,12 @@
+@use '@angular/material' as mat;
+@use './app/theme/m3-theme.scss' as theme;
+
+.list {
+  height: calc(100% - 32px);
+}
+
+.item {
+  &.item-alternate {
+    background-color: mat.get-theme-color(theme.$light-theme, primary, 90);
+  }
+}
