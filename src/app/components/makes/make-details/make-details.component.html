@@ -1,3 +1,23 @@
-<app-make-type-list [makeTypes]="makeTypes"></app-make-type-list>
+@if(loadingTypes) {
+  <div class="loading-container">
+    <mat-progress-spinner
+      mode="indeterminate"
+      [diameter]="32"
+    ></mat-progress-spinner>
+  </div>
+}
+@else {
+  <app-make-type-list [makeTypes]="makeTypes"></app-make-type-list>
+}
 
-<app-make-model-list [makeModels]="makeModels"></app-make-model-list>
+@if(loadingModels) {
+  <div class="loading-container models-loading">
+    <mat-progress-spinner
+      mode="indeterminate"
+      [diameter]="32"
+    ></mat-progress-spinner>
+  </div>
+}
+@else {
+  <app-make-model-list [makeModels]="makeModels"></app-make-model-list>
+}
