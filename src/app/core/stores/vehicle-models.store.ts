@@ -32,7 +32,9 @@ export const VehicleModelsStore = signalStore(
         }),
         switchMap((makeId) => {
           if (store.initialLoad().get(makeId)) {
-            return of(store.modelsMap().get(makeId));
+            const currentModels = store.modelsMap().get(makeId);
+            patchState(store, { currentModels });
+            return of(currentModels);
           }
           return vehiclesService.getModelsByMakeId(makeId).pipe(
             tapResponse({

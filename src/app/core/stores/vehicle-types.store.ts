@@ -32,7 +32,9 @@ export const VehicleTypesStore = signalStore(
         }),
         switchMap((makeId) => {
           if (store.initialLoad().get(makeId)) {
-            return of(store.typesMap().get(makeId));
+            const currentTypes = store.typesMap().get(makeId);
+            patchState(store, { currentTypes });
+            return of(currentTypes);
           }
           return vehiclesService.getTypesByMakeId(makeId).pipe(
             tapResponse({
@@ -40,7 +42,7 @@ export const VehicleTypesStore = signalStore(
                 const newTypes = store.typesMap().set(makeId, response.Results);
                 const newInitialLoad = store.initialLoad().set(makeId, true);
                 patchState(store, { typesMap: newTypes, currentTypes: response.Results, isLoading: false, initialLoad: newInitialLoad })
-                
+
                 return store.currentTypes();
               },
               error: (err) => {
