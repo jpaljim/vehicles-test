@@ -1,0 +1,10 @@
+<h1>Vehicle types</h1>
+
+<mat-list class="list">
+  <cdk-virtual-scroll-viewport itemSize="48" class="list app-scroll">
+    <mat-list-item *cdkVirtualFor="let type of makeTypes; let odd = odd;"
+      class="item" [class.item-alternate]="odd">
+      {{ type.VehicleTypeName }}
+    </mat-list-item>
+  </cdk-virtual-scroll-viewport>
+</mat-list>

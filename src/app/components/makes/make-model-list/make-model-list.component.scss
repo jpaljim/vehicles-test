@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+@use './app/theme/m3-theme.scss' as theme;
+
+h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: mat.get-theme-color(theme.$light-theme, primary, 60);
+  margin: 0px;
+}
+
+.list {
+  height: 100%;
+}
+
+.item {
+  &.item-alternate {
+    background-color: mat.get-theme-color(theme.$light-theme, primary, 90);
+  }
+}
