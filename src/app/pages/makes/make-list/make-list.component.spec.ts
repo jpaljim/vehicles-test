@@ -1,18 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MakeListComponent } from './make-list.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MakeListPageComponent } from './make-list.component';
 
-describe('MakeListComponent', () => {
-  let component: MakeListComponent;
-  let fixture: ComponentFixture<MakeListComponent>;
+describe('MakeListPageComponent', () => {
+  let component: MakeListPageComponent;
+  let fixture: ComponentFixture<MakeListPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MakeListComponent]
+      imports: [MakeListPageComponent],
+      providers: [
+        provideAnimationsAsync(),
+        provideHttpClient()
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(MakeListComponent);
+    fixture = TestBed.createComponent(MakeListPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
