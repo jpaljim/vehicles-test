@@ -1,1 +1,7 @@
-<p>make-details works!</p>
+<button class="back-button" mat-button (click)="navigateBackToList()">
+  <mat-icon>arrow_back</mat-icon>
+  Back
+</button>
+
+<app-make-details [makeTypes]="vehicleTypesStore.currentTypes()"
+  [makeModels]="vehicleModelsStore.currentModels()"></app-make-details>
